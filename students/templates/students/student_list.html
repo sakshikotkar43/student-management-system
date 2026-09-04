@@ -1,0 +1,33 @@
+{% extends 'students/base.html' %}
+
+{% block content %}
+
+<h1>Students</h1>
+
+<a href="{% url 'add_student' %}">
+    <button>Add Student</button>
+</a>
+
+<br><br>
+
+{% for student in students %}
+
+    <h3>{{ student.name }}</h3>
+
+    <p>Email: {{ student.email }}</p>
+    <p>Age: {{ student.age }}</p>
+    <p>Course: {{ student.course }}</p>
+    <a href="{% url 'student_details' student.id %}"> <button> View Details </button></a>
+
+    <a href="{% url 'edit_student' student.id %}">
+    <button>Edit</button>
+</a>
+
+<a href="{% url 'delete_student' student.id %}">
+    <button>Delete</button>
+</a>
+
+
+{% endfor %}
+
+{% endblock %}

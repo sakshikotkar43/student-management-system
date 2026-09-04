@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: black;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.content {
+    padding: 30px;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: lightgray;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
