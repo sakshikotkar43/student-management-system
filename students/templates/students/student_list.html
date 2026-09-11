@@ -1,0 +1,55 @@
+{% extends 'students/base.html' %}
+
+{% block content %}
+
+<h1>Students</h1>
+
+<a href="{% url 'add_student' %}">
+    <button>Add Student</button>
+</a>
+
+<br><br>
+
+<form method="GET">
+    <input
+    type="text"
+    name = "search"
+    placeholder="Search by name">
+    <button type="submit">Search</button>
+</form>
+
+<form method="GET">
+    <label>Course:</label>
+    <select name="course">
+        <option value="">All Course</option>
+        <option value="AIML">AIML</option>
+        <option value="CSE">CSE</option>
+        <option value="IT">IT</option>
+    </select>
+    <label>Age:</label>
+    <input type="number" name="age">
+    <button type="submit">Filter</button>
+</form>
+<br>
+
+{% for student in students %}
+
+    <h3>{{ student.name }}</h3>
+
+    <p>Email: {{ student.email }}</p>
+    <p>Age: {{ student.age }}</p>
+    <p>Course: {{ student.course }}</p>
+    <a href="{% url 'student_details' student.id %}"> <button> View Details </button></a>
+
+    <a href="{% url 'edit_student' student.id %}">
+    <button>Edit</button>
+</a>
+
+<a href="{% url 'delete_student' student.id %}">
+    <button>Delete</button>
+</a>
+
+
+{% endfor %}
+
+{% endblock %}
