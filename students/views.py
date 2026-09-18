@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Student
 from .forms import StudentForm
+from django.core.paginator import Paginator
 
 
 def home(request):
@@ -72,6 +73,9 @@ def student_list(request):
         students = students.filter(course__icontains=course)
     if age:
         students = students.filter(age=age)
+    paginator = Paginator(students, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     return render(request, 'students/student_list.html', {
-        'students': students
+        'page_obj': page_obj
     })
