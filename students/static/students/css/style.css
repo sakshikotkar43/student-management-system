@@ -24,6 +24,27 @@ footer {
     padding: 20px;
     background-color: lightgray;
 }
+
+.messages {
+    padding: 10px 20px;
+}
+
+.alert {
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    border-left: 5px solid #4caf50;
+    background-color: #eaf7ee;
+    color: #1d5d3a;
+}
+
+.alert.success {
+    border-left-color: #2e7d32;
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
 button {
     padding: 10px 20px;
     border: none;

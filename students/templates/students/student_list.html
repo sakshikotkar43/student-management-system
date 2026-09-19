@@ -48,7 +48,9 @@
 <a href="{% url 'delete_student' student.id %}">
     <button>Delete</button>
 </a>
-
+<hr>
+{% empty %}
+<p> No students found</p>
 
 {% endfor %}
 
